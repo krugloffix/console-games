@@ -6,3 +6,6 @@ brain-games:
 
 publish:
 	nmp publish --dry-run
+
+lint:
+	npx eslint .
