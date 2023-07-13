@@ -6,4 +6,4 @@ const getPlayerName = () => {
   return playerName;
 };
 
-export default getPlayerName();
+export default getPlayerName;
