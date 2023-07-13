@@ -1,13 +1,12 @@
 import readlineSync from 'readline-sync';
-
-const getRndNum = () => Math.floor(Math.random() * 101);
+import getRndNum from '../getRndNum.js';
 
 const isEven = (num) => num % 2 === 0;
 
-export default () => {
+export default (gamesToPlay) => {
   let countWins = 0;
 
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < gamesToPlay; i += 1) {
     const num = getRndNum();
     const isNumEven = isEven(num);
     console.log(`Question: ${num}`);
@@ -21,5 +20,5 @@ export default () => {
     }
   }
 
-  return countWins === 3;
+  return countWins;
 };
