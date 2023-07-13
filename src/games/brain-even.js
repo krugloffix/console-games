@@ -7,7 +7,7 @@ export default (gamesToPlay) => {
   let countWins = 0;
 
   for (let i = 0; i < gamesToPlay; i += 1) {
-    const num = getRndNum();
+    const num = getRndNum(0, 101);
     const isNumEven = isEven(num);
     console.log(`Question: ${num}`);
     const userAnswer = readlineSync.question('Your answer: ');
