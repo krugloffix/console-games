@@ -6,7 +6,7 @@ const readAnswer = () => readlineSync.question('Your answer: ');
 
 const printQuestion = (question) => console.log(`Question: ${question}`);
 
-const isCorrectAnswer = (userAnswer, correctAnswer) => userAnswer === correctAnswer;
+const isCorrectAnswer = (userAnswer, correctAnswer) => userAnswer == correctAnswer;
 
 const getResult = (correctAnswers, answersToWin, playerName) => correctAnswers === answersToWin ? `Congratulations, ${playerName}!` : `Let's try again, ${playerName}!`;
 
