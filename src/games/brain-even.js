@@ -1,24 +1,21 @@
-import readlineSync from 'readline-sync';
-import getRndNum from '../getRndNum.js';
+import {getRndNum, readAnswer, printQuestion, isCorrectAnswer} from '../utilityFuncs.js'
 
 const isEven = (num) => num % 2 === 0;
 
-export default (gamesToPlay) => {
-  let countWins = 0;
+export default () => {
+  
+  const num = getRndNum(0, 101);
+  const isNumEven = isEven(num);
+  printQuestion(num);
+  const userAnswer = readAnswer();
+  const isCorrect = isCorrectAnswer(isNumEven ? 'yes' : 'no', userAnswer);
 
-  for (let i = 0; i < gamesToPlay; i += 1) {
-    const num = getRndNum(0, 101);
-    const isNumEven = isEven(num);
-    console.log(`Question: ${num}`);
-    const userAnswer = readlineSync.question('Your answer: ');
-
-    if ((isNumEven && userAnswer === 'yes') || (!isNumEven && userAnswer === 'no')) {
-      console.log('Correct!');
-      countWins += 1;
-    } else {
-      console.log('Wrong!');
-    }
+  if (isCorrect) {
+    console.log('Correct!');
+    return 1;
+  } else {
+    console.log('Wrong!');
+    return 0;
   }
 
-  return countWins;
 };
