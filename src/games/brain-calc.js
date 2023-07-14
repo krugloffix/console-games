@@ -1,5 +1,4 @@
-import readlineSync from 'readline-sync';
-import getRndNum from '../getRndNum.js';
+import {getRndNum, readAnswer, printQuestion, isCorrectAnswer} from '../utilityFuncs.js'
 
 const getTaskInfo = (operator, num1, num2) => {
   switch (operator) {
@@ -12,26 +11,22 @@ const getTaskInfo = (operator, num1, num2) => {
   }
 };
 
-export default (gamesToPlay) => {
-  let countWins = 0;
+export default () => {
 
-  for (let i = 0; i < gamesToPlay; i += 1) {
     const num1 = getRndNum(0, 101); 
     const num2 = getRndNum(0, 101);
     const operator = getRndNum(0, 3);
     const taskInfo = getTaskInfo(operator, num1, num2);
 
-    console.log(`Question: ${taskInfo.question}`);
-    const userAnswer = readlineSync.question('Your answer: ');
+    printQuestion(taskInfo.question);
+    const userAnswer = readAnswer();
+    const isCorrect = isCorrectAnswer(taskInfo.answer, userAnswer)
 
-    if( userAnswer == taskInfo.answer) {
+    if (isCorrect) {
       console.log('Correct!');
-      countWins += 1;
+      return 1;
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${taskInfo.answer}'`)
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${taskInfo.answer}'`);
+      return 0;
     }
-  }
-
-  return countWins;
-
 };
