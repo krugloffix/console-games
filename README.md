@@ -21,11 +21,11 @@ Next step is to chose the game and test yourself.
 
 When you choose a game you want to play, write in the console 
 ```sh
-game-(name)
+brain-(name)
 ```
 or (if you use windows) 
 ```sh
-npx game-(name)
+npx brain-(name)
 ```
 
 ### Good luck and have fun!
