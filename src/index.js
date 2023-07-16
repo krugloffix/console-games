@@ -5,7 +5,7 @@ const playGame = (gameName, gameIntro, gameFunc) => {
   const roundsToPlay = 3;
   let wins = 0;
 
-  console.log(`Let's start game ${gameName}!`);
+  // console.log(`Let's start game ${gameName}!`);
   console.log(gameIntro);
 
   for (let i = 0; i < roundsToPlay; i += 1) {
