@@ -1,4 +1,6 @@
-import {getRndNum, readAnswer, printQuestion, isCorrectAnswer} from '../utilityFuncs.js'
+import {
+  getRndNum, readAnswer, printQuestion, isCorrectAnswer,
+} from '../utilityFuncs.js';
 
 export default () => {
   const progressionLength = 10;
@@ -30,5 +32,4 @@ export default () => {
     console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'`);
     return 0;
   }
-
 };

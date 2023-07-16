@@ -1,5 +1,5 @@
-import playerName from "../bin/brain-games.js";
-import { getResult } from "./utilityFuncs.js";
+import playerName from '../bin/brain-games.js';
+import { getResult } from './utilityFuncs.js';
 
 const playGame = (gameName, gameIntro, gameFunc) => {
   const roundsToPlay = 3;
