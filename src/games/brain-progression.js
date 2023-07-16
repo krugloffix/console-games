@@ -3,7 +3,7 @@ import {getRndNum, readAnswer, printQuestion, isCorrectAnswer} from '../utilityF
 export default () => {
   const progressionLength = 10;
   let progressionNum = getRndNum(0, 101);
-  const progressionDiff = getRndNum(0, 11);
+  const progressionDiff = getRndNum(1, 11);
   const hiddenElem = getRndNum(0, progressionLength);
 
   const progression = [];
@@ -17,7 +17,7 @@ export default () => {
 
   question[hiddenElem] = '..';
 
-  printQuestion(`${question}`);
+  printQuestion(`${question.join(' ')}`);
   const userAnswer = readAnswer();
   const answer = progression[hiddenElem];
 
