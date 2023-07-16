@@ -9,7 +9,12 @@ const playGame = (gameName, gameIntro, gameFunc) => {
   console.log(gameIntro);
 
   for (let i = 0; i < roundsToPlay; i += 1) {
-    wins += gameFunc();
+    const result = gameFunc();
+    if (result === 0) {
+      break;
+    } else {
+      wins += 1;
+    }
   }
 
   console.log(getResult(wins, roundsToPlay, playerName));
