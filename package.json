@@ -18,7 +18,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@hexlet/code": "github:krugloffix/frontend-project-44",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
