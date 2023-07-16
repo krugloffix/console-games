@@ -21,11 +21,13 @@ export default () => {
   const answer = isPrime(num) ? 'yes' : 'no';
   const isCorrect = isCorrectAnswer(answer, userAnswer);
 
-  if (isCorrect) {
+  const result = isCorrect ? 1 : 0;
+
+  if (result) {
     console.log('Correct!');
-    return 1;
   } else {
     console.log('Wrong!');
-    return 0;
   }
+
+  return result;
 };

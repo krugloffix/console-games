@@ -6,7 +6,7 @@ const getGcd = (num1, num2) => {
   let gcd = 1;
   for (let i = Math.min(num1, num2); i > 1; i -= 1) {
     if (num1 % i === 0 && num2 % i === 0) {
-      gcd += 1;
+      gcd = i;
       return gcd;
     }
   }
@@ -23,11 +23,13 @@ export default () => {
   const answer = getGcd(num1, num2);
   const isCorrect = isCorrectAnswer(answer, userAnswer);
 
-  if (isCorrect) {
+  const result = isCorrect ? 1 : 0;
+
+  if (result) {
     console.log('Correct!');
-    return 1;
   } else {
     console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'`);
-    return 0;
   }
+
+  return result;
 };

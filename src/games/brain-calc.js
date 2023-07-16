@@ -3,14 +3,22 @@ import {
 } from '../utilityFuncs.js';
 
 const getTaskInfo = (operator, num1, num2) => {
+  let taskInfo = {};
   switch (operator) {
     case 0:
-      return { question: `${num1} + ${num2}`, answer: num1 + num2 };
+      taskInfo = { question: `${num1} + ${num2}`, answer: num1 + num2 };
+      break;
     case 1:
-      return { question: `${num1} - ${num2}`, answer: num1 - num2 };
+      taskInfo = { question: `${num1} - ${num2}`, answer: num1 - num2 };
+      break;
     case 2:
-      return { question: `${num1} * ${num2}`, answer: num1 * num2 };
+      taskInfo = { question: `${num1} * ${num2}`, answer: num1 * num2 };
+      break;
+    default:
+      taskInfo = { question: `${num1} + ${num2}`, answer: num1 + num2 };
   }
+
+  return taskInfo;
 };
 
 export default () => {
@@ -23,11 +31,13 @@ export default () => {
   const userAnswer = readAnswer();
   const isCorrect = isCorrectAnswer(taskInfo.answer, userAnswer);
 
-  if (isCorrect) {
+  const result = isCorrect ? 1 : 0;
+
+  if (result) {
     console.log('Correct!');
-    return 1;
   } else {
     console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${taskInfo.answer}'`);
-    return 0;
   }
+
+  return result;
 };
