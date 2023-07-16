@@ -9,8 +9,6 @@ const isPrime = (num) => {
     }
   }
 
-  console.log(dividers)
-
   return dividers.length === 2;
 }
 
